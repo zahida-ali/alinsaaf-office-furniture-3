@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alinsaaf Office Furniture - Premium office furniture solutions by owners Sajjad Ali and Ijaz Ali. Explore our high-quality products with fast delivery and excellent customer service.">
+    <meta name="keywords" content="office furniture, Alinsaaf furniture, desks, chairs, ergonomic furniture, office decor, Pakistan furniture, premium office solutions">
+    <meta name="author" content="Alinsaaf Office Furniture">
+    <meta name="robots" content="index, follow">
+    <title>Alinsaaf Office Furniture - Premium Office Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            animation: fadeInUp 1s ease-in-out 0.5s;
+        }
+        .product-card {
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-benefit-table {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .ad-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Alinsaaf Office Furniture</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ads">Ads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Animation -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="animate__animated">Welcome to Alinsaaf Office Furniture</h1>
+            <p class="animate__animated">Discover premium office furniture solutions crafted for comfort and productivity.</p>
+            <a href="#products" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Products</h2>
+            <div class="row" id="product-list">
+                <!-- Products will be dynamically added here -->
+            </div>
+            <!-- Admin Controls -->
+            <div class="text-center mt-4">
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal">Add Product</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-product-form">
+                        <div class="mb-3">
+                            <label for="product-name" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="product-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-description" class="form-label">Description</label>
+                            <textarea class="form-control" id="product-description" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="product-image" class="form-label">Image URL</label>
+                            <input type="url" class="form-control" id="product-image" placeholder="https://example.com/image.jpg" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features & Benefits Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Why Choose Alinsaaf?</h2>
+            <div class="feature-benefit-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Clear Purpose</td><td>Keeps users focused and engaged</td></tr>
+                        <tr><td>Easy Navigation</td><td>Minimizes confusion and bounce</td></tr>
+                        <tr><td>Mobile Responsiveness</td><td>Optimizes experience across devices</td></tr>
+                        <tr><td>Fast Load Speed</td><td>Retains users and boosts SEO</td></tr>
+                        <tr><td>High-Quality Content</td><td>Builds credibility and engagement</td></tr>
+                        <tr><td>Effective CTAs</td><td>Guides visitors toward desired actions</td></tr>
+                        <tr><td>Security & Trust Signals</td><td>Boosts confidence in the brand</td></tr>
+                        <tr><td>Accessibility</td><td>Opens your site to all users</td></tr>
+                        <tr><td>Analytics</td><td>Enables data-driven improvement</td></tr>
+                        <tr><td>Strong Branding</td><td>Creates a consistent, professional feel</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ads Section -->
+    <section id="ads" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Advertisements</h2>
+            <div class="ad-section">
+                <div id="ad-list">
+                    <!-- Ads will be dynamically added here -->
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addAdModal">Publish Ad</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Ad Modal -->
+    <div class="modal fade" id="addAdModal" tabindex="-1" aria-labelledby="addAdModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addAdModalLabel">Publish New Ad</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-ad-form">
+                        <div class="mb-3">
+                            <label for="ad-title" class="form-label">Ad Title</label>
+                            <input type="text" class="form-control" id="ad-title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ad-content" class="form-label">Ad Content</label>
+                            <textarea class="form-control" id="ad-content" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ad-image" class="form-label">Image URL</label>
+                            <input type="url" class="form-control" id="ad-image" placeholder="https://example.com/ad-image.jpg" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Publish Ad</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Owners</h4>
+                    <p><strong>Sajjad Ali</strong>: <a href="tel:+923166687166">0316-6687166</a></p>
+                    <p><strong>Ijaz Ali</strong>: <a href="tel:+923703707585">0370-3707585</a></p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Get in Touch</h4>
+                    <p>Email: <a href="mailto:info@alinsaafurniture.com">info@alinsaafurniture.com</a></p>
+                    <p>Address: Alinsaaf Office Furniture, Main Boulevard, Lahore, Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2025 Alinsaaf Office Furniture. All rights reserved.</p>
+            <p>Designed with accessibility and performance in mind.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript for Product and Ad Management -->
+    <script>
+        // Sample products
+        const products = [
+            {
+                name: "Ergonomic Office Chair",
+                description: "Comfortable chair with lumbar support for long working hours.",
+                image: "https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg"
+            },
+            {
+                name: "Modern Office Desk",
+                description: "Sleek wooden desk with ample workspace.",
+                image: "https://images.pexels.com/photos/37347/pexels-photo.jpg"
+            }
+        ];
+
+        // Sample ads
+        const ads = [
+            {
+                title: "New Arrivals!",
+                content: "Check out our latest collection of ergonomic furniture.",
+                image: "https://images.pexels.com/photos/279626/pexels-photo-279626.jpeg"
+            }
+        ];
+
+        // Escape HTML to prevent XSS and syntax issues
+        function escapeHTML(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        // Render products
+        function renderProducts() {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            products.forEach((product, index) => {
+                const escapedName = escapeHTML(product.name);
+                const escapedDescription = escapeHTML(product.description);
+                const escapedImage = escapeHTML(product.image);
+                const productCard = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="${escapedImage}" class="card-img-top" alt="${escapedName}">
+                            <div class="card-body">
+                                <h5 class="card-title">${escapedName}</h5>
+                                <p class="card-text">${escapedDescription}</p>
+                                <button class="btn btn-danger" onclick="removeProduct(${index})">Remove</button>
+                            </div>
+                        </div>
+                    </div>`;
+                productList.innerHTML += productCard;
+            });
+        }
+
+        // Render ads
+        function renderAds() {
+            const adList = document.getElementById('ad-list');
+            adList.innerHTML = '';
+            ads.forEach(ad => {
+                const escapedTitle = escapeHTML(ad.title);
+                const escapedContent = escapeHTML(ad.content);
+                const escapedImage = escapeHTML(ad.image);
+                const adCard = `
+                    <div class="card mb-3">
+                        <img src="${escapedImage}" class="card-img-top" alt="${escapedTitle}">
+                        <div class="card-body">
+                            <h5 class="card-title">${escapedTitle}</h5>
+                            <p class="card-text">${escapedContent}</p>
+                        </div>
+                    </div>`;
+                adList.innerHTML += adCard;
+            });
+        }
+
+        // Add product
+        document.getElementById('add-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('product-name').value.trim();
+            const description = document.getElementById('product-description').value.trim();
+            const image = document.getElementById('product-image').value.trim();
+            if (name && description && image) {
+                products.push({ name, description, image });
+                renderProducts();
+                this.reset();
+                bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
+            }
+        });
+
+        // Remove product
+        function removeProduct(index) {
+            products.splice(index, 1);
+            renderProducts();
+        }
+
+        // Add ad
+        document.getElementById('add-ad-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('ad-title').value.trim();
+            const content = document.getElementById('ad-content').value.trim();
+            const image = document.getElementById('ad-image').value.trim();
+            if (title && content && image) {
+                ads.push({ title, content, image });
+                renderAds();
+                this.reset();
+                bootstrap.Modal.getInstance(document.getElementById('addAdModal')).hide();
+            }
+        });
+
+        // Initial render
+        renderProducts();
+        renderAds();
+
+        // Google Analytics (Placeholder - Replace with actual tracking ID)
+        /*
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-XXXXX-Y');
+        </script>
+        */
+    </script>
+</body>
+</html>
+</body>
+</html>
